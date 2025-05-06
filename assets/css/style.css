@@ -422,6 +422,48 @@ section {
   margin-bottom: 0;
 }
 
+/* Subtitle */
+.section-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #6c757d; /* lighter gray */
+  text-align: center;
+  transition: .3s linear;
+}
+
+.section-subtitle::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 0px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 50px);
+}
+
+.section-subtitle::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #6c757d;
+  bottom: 0;
+  left: calc(50% - 15px);
+  transition: .3s linear;
+}
+
+.section-subtitle:hover::after {
+  width: 100px;
+  left: calc(50% - 50px);
+}
+
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
