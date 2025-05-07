@@ -180,6 +180,8 @@
     items: 1
   });
 
+  
+
   // Portfolio details carousel
   $(".portfolio-details-carousel").owlCarousel({
     autoplay: true,

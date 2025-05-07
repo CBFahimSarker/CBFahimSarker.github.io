@@ -197,10 +197,7 @@
         <div class="container">
           <div class="section-title">
             <h2>Languages & Tools</h2>
-          </div>
-          <div class="section-subtitle" style="margin-top: 20px;">
-            Languages
-          </div>    
+          </div>  
           <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
@@ -290,6 +287,52 @@
               </div>
             </div>
           </div>
+          <!-- Add this just after the row ends -->
+          <div class="text-center mt-4">
+            <button id="toggleCodeBtn" class="custom-btn"><span>Show More</span></button>
+          </div>
+          
+          <div id="extraCodeBox" class="extra-code-box"></div>
+  
+          <!-- Add this just after the row ends -->          
+          <script>
+            const btn = document.getElementById("toggleCodeBtn");
+            const span = btn.querySelector("span");
+            const box = document.getElementById("extraCodeBox");
+          
+            let isLoaded = false;
+          
+            btn.addEventListener("click", () => {
+              if (!isLoaded) {
+                fetch("tech_stack.html")
+                  .then(res => res.text())
+                  .then(data => {
+                    box.innerHTML = data;
+                    box.classList.add("show");
+                    animateText("Hide Details");
+                    isLoaded = true;
+                  })
+                  .catch(() => {
+                    box.innerHTML = "<p>Failed to load details.</p>";
+                    box.classList.add("show");
+                    animateText("Hide Details");
+                    isLoaded = true;
+                  });
+              } else {
+                box.classList.toggle("show");
+                const isVisible = box.classList.contains("show");
+                animateText(isVisible ? "Hide Details" : "Show More");
+              }
+            });
+          
+            function animateText(newText) {
+              span.style.opacity = 0;
+              setTimeout(() => {
+                span.textContent = newText;
+                span.style.opacity = 1;
+              }, 300);
+            }
+          </script>          
         </div>
       </div>
       </section>
@@ -314,6 +357,10 @@
               data-aos="fade-up"
               data-aos-delay="100"
             >
+            <ul id="portfolio-flters">
+              <li data-filter=".filter-native_app">Native Application</li>
+              <li data-filter=".filter-cross-platform-app">Cross-Platform Application</li>
+            </ul>
               <ul id="portfolio-flters">
                 <li data-filter="*" class="filter-active">All</li>
                 <li data-filter=".filter-utility-app">Utility App's</li>
@@ -332,7 +379,7 @@
           >
           <!-- Start -->
             <div
-              class="col-lg-4 col-md-6 portfolio-item filter-game_app filter-educational_app"
+              class="col-lg-4 col-md-6 portfolio-item filter-native_app filter-game_app filter-educational_app"
               id="iptv"
             >
               <div class="portfolio-wrap">

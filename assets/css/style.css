@@ -493,6 +493,66 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.custom-btn {
+  width: 100%;
+  background-color: #6c757d;
+  color: white;
+  border: 2px solid #6c757d;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-btn:hover,
+.custom-btn:active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Button text fade transition */
+.custom-btn span {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+/* Sliding box */
+.extra-code-box {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
+  background: #f9f9f9;
+  padding: 0 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.extra-code-box.show {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 20px;
+}
+
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
