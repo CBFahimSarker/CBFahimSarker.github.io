@@ -202,7 +202,7 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
                 <img
-                  src="assets/img/languagetools/language/1-flutter.png"
+                  src="assets/img/languagetools/1-Android-Studio.png"
                   class="img-fluid"
                   alt=""
                   style="max-width: 100px; height: auto; display: block; margin: 0 auto;"
@@ -213,10 +213,10 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
                 <img
-                  src="assets/img/languagetools/language/2-dart.png"
+                  src="assets/img/languagetools/2-Flutter.png"
                   class="img-fluid"
                   alt=""
-                  style="max-width: 100px; height: auto; display: block; margin: 0 auto;"
+                  style="max-width: 90px; height: auto; display: block; margin: 0 auto;"
                 />
               </div>
             </div>
@@ -224,7 +224,7 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
                 <img
-                  src="assets/img/languagetools/language/3-java.webp"
+                  src="assets/img/languagetools/3-Java.webp"
                   class="img-fluid"
                   alt=""
                   style="max-width: 120px; height: auto; display: block; margin: 0 auto;"
@@ -235,10 +235,10 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
                 <img
-                  src="assets/img/languagetools/language/4-Python.png"
+                  src="assets/img/languagetools/4-Python.png"
                   class="img-fluid"
                   alt=""
-                  style="max-width: 85px; height: auto; display: block; margin: 0 auto;"
+                  style="max-width: 80px; height: auto; display: block; margin: 0 auto;"
                 />
               </div>
             </div>
@@ -246,10 +246,10 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
                 <img
-                  src="assets/img/languagetools/language/5-JavaScript.png"
+                  src="assets/img/languagetools/5-Node-js.png"
                   class="img-fluid"
                   alt=""
-                  style="max-width: 85px; height: auto; display: block; margin: 0 auto;"
+                  style="max-width: 95px; height: auto; display: block; margin: 0 auto;"
                 />
               </div>
             </div>
@@ -257,10 +257,10 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
                 <img
-                  src="assets/img/languagetools/language/6-nodejs.png"
+                  src="assets/img/languagetools/6-Firebase.png"
                   class="img-fluid"
                   alt=""
-                  style="max-width: 75px; height: auto; display: block; margin: 0 auto;"
+                  style="max-width: 80px; height: auto; display: block; margin: 0 auto;"
                 />
               </div>
             </div>
@@ -268,7 +268,7 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo firebase-icon">
                 <img
-                  src="assets/img/languagetools/7-adobexd.png"
+                  src="assets/img/languagetools/7-Git.png"
                   class="img-fluid"
                   alt=""
                   style="max-width: 75px; height: auto; display: block; margin: 0 auto;"
@@ -279,60 +279,24 @@
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="client-logo">
                 <img
-                  src="assets/img/languagetools/8-adobeillustrator.png"
+                  src="assets/img/languagetools/8-Figma.png"
                   class="img-fluid"
                   alt=""
-                  style="max-width: 115px; height: auto; display: block; margin: 0 auto;"
+                  style="max-width: 85px; height: auto; display: block; margin: 0 auto;"
                 />
               </div>
             </div>
           </div>
           <!-- Add this just after the row ends -->
           <div class="text-center mt-4">
-            <button id="toggleCodeBtn" class="custom-btn"><span>Show More</span></button>
-          </div>
-          
-          <div id="extraCodeBox" class="extra-code-box"></div>
-  
-          <!-- Add this just after the row ends -->          
-          <script>
-            const btn = document.getElementById("toggleCodeBtn");
-            const span = btn.querySelector("span");
-            const box = document.getElementById("extraCodeBox");
-          
-            let isLoaded = false;
-          
-            btn.addEventListener("click", () => {
-              if (!isLoaded) {
-                fetch("tech_stack.html")
-                  .then(res => res.text())
-                  .then(data => {
-                    box.innerHTML = data;
-                    box.classList.add("show");
-                    animateText("Hide Details");
-                    isLoaded = true;
-                  })
-                  .catch(() => {
-                    box.innerHTML = "<p>Failed to load details.</p>";
-                    box.classList.add("show");
-                    animateText("Hide Details");
-                    isLoaded = true;
-                  });
-              } else {
-                box.classList.toggle("show");
-                const isVisible = box.classList.contains("show");
-                animateText(isVisible ? "Hide Details" : "Show More");
-              }
-            });
-          
-            function animateText(newText) {
-              span.style.opacity = 0;
-              setTimeout(() => {
-                span.textContent = newText;
-                span.style.opacity = 1;
-              }, 300);
-            }
-          </script>          
+            <a href="tech_stack.html" 
+            data-vbtype="iframe"
+            class="venobox"
+            title="Portfolio Details">
+            <button id="toggleCodeBtn" class="custom-btn"><span>Show More</span>
+            </button>
+          </a>
+          </div>      
         </div>
       </div>
       </section>
